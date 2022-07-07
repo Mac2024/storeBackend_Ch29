@@ -98,11 +98,12 @@ def test2():
 
     print(len(users))
     print(len("Mario"))
-    mycolor = 'Pink'
-    lowerstring = mycolor.lower()
 
     for user in users:
         print(user["name"])
+
+        if user["color"].lower() == "pink":
+            print(user["name"])
 
 
 start_tests()

@@ -49,4 +49,12 @@ def get_products():
     return json.dumps(mock_data)
 
 
+@app.get("/api/products/<id>")
+def get_product_by_id(id):
+
+    for prod in mock_data:
+        if prod["id"] == id:
+            return json.dumps(prod)
+
+
 app.run(debug=True)
