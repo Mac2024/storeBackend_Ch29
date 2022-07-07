@@ -1,4 +1,7 @@
 from flask import Flask
+from about import me
+from data import mock_data
+import json
 
 
 app = Flask('server')
@@ -18,7 +21,7 @@ def test():
 
 
 @app.get("/about")
-def about():
+def about_me():
     return "Mario McGrady from Alabama"
 
 
@@ -30,6 +33,20 @@ def about():
 @app.get("/api/version")
 def version():
     return "1.0"
+
+
+# get /api/ about
+# return first lastname
+@app.get("/api/about")
+def about():
+    return json.dumps(me)  # parse the dict into a json string
+
+
+# get /api/products
+# return mock_data
+@app.get("/api/products")
+def get_products():
+    return json.dumps(mock_data)
 
 
 app.run(debug=True)
