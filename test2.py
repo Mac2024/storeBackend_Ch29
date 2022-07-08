@@ -106,6 +106,21 @@ def test2():
             print(user["name"])
 
 
+def test3():
+    print("----- TEST 3 -----")
+
+    prices = [123, 3, 23, 6475, 58, 89, 45, 34, 87,
+              34, -12, 23, 123, -23, -123, 0, 123, 0, -29, 10]
+
+    solution = prices[0]
+    for num in prices:
+        if num > solution:
+            solution = num
+
+    print("The greatest number is " + str(solution))
+
+
 start_tests()
 test1()
 test2()
+test3()
